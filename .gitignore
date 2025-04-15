@@ -1,0 +1,25 @@
+# Node modules
+node_modules/
+
+# Logs
+*.log
+
+# Ignore all .env files
+*.env
+
+# OS files
+.DS_Store       # macOS
+Thumbs.db       # Windows
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Python virtual environments (if any)
+venv/
+env/
+
+# IDE/editor files
+.vscode/         # Visual Studio Code settings
+.idea/           # JetBrains IDE settings
+*.sublime-workspace   # Sublime Text workspace files
