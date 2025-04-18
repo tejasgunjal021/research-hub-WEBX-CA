@@ -1,6 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useUserStore } from "../stores/useUserStore";
+import toast from "react-hot-toast";
 
 // Define the type for the form data
 interface FormData {
@@ -21,13 +22,17 @@ const LoginPage: React.FC = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     console.log("User Attempted Login:", formData);
-
-    const success = await login(formData); // Will return true or false
-
-    if (success) {
-      navigate("/"); // Only navigate if login is successful
+  
+    try {
+      const success = await login(formData); // Will return true or throw
+  
+      if (success) {
+        navigate("/");
+      }
+    } catch (err: any) {
+      // Show toast on login failure
+      toast.error(err.message || "Incorrect email or password");
     }
-    // No need to handle failure here, toast already handled inside login function
   };
 
   return (

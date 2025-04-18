@@ -10,6 +10,7 @@ import DatasetsPage from "./pages/Datasets";
 import DatasetDetailsPage from "./components/DatasetDetails";
 import SignupPage from "./pages/SignUp";
 import LoginPage from "./pages/Login";
+import OtpVerificationPage from "./pages/OtpVerificationPage";
 import { Toaster } from "react-hot-toast";
 
 import "./index.css";
@@ -73,6 +74,7 @@ function App() {
           <Route path="/research-papers" element={<ResearchPapers />} />
           <Route path="/discussions" element={<DiscussionPage />} />
           <Route path="/datasets" element={<DatasetsPage />} />
+          <Route path="/signup/verify-otp" element={<OtpVerificationPage />} />
           <Route
             path="/datasets/:id"
             element={<DatasetDetailsPage />}
